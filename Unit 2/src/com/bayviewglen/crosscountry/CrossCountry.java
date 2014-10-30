@@ -20,13 +20,18 @@ public class CrossCountry {
 	public static void main(String[] args) {
 
 		Scanner keyboard = new Scanner(System.in);
+		
 		System.out.print("Please enter your first and last name:");
 		String runner1name = keyboard.nextLine();
-		System.out.print("Please enter your time for 1 mile <mm:ss.sss>:");
+		
+		int name1 = runner1name.indexOf(' ');
+		String FirstName1 = runner1name.substring(0,name1);
+		
+		System.out.print(FirstName1 + ", please enter your time for 1 mile <mm:ss.sss>:");
 		String runner1m1 = keyboard.nextLine();
-		System.out.print("Please enter your time for 2 miles <mm:ss.sss>:");
+		System.out.print(FirstName1 + ", please enter your time for 2 miles <mm:ss.sss>:");
 		String runner1m2 = keyboard.nextLine();
-		System.out.print("Please enter your time for 5 kilometers <mm:ss.sss>:");
+		System.out.print(FirstName1 + ", please enter your time for 5 kilometers <mm:ss.sss>:");
 		String runner15k = keyboard.nextLine();
 		
 		// convert splits to seconds
@@ -78,11 +83,15 @@ public class CrossCountry {
 		
 		System.out.print("Please enter your first and last name:");
 		String runner2name = keyboard.nextLine();
-		System.out.print("Please enter your time for 1 mile <mm:ss.sss>:");
+		
+		int name2 = runner2name.indexOf(' ');
+		String FirstName2 = runner2name.substring(0,name2);
+		
+		System.out.print(FirstName2 + ", please enter your time for 1 mile <mm:ss.sss>:");
 		String runner2m1 = keyboard.nextLine();
-		System.out.print("Please enter your time for 2 miles <mm:ss.sss>:");
+		System.out.print(FirstName2 + ", please enter your time for 2 miles <mm:ss.sss>:");
 		String runner2m2 = keyboard.nextLine();
-		System.out.print("Please enter your time for 5 kilometers <mm:ss.sss>:");
+		System.out.print(FirstName2 + ", please enter your time for 5 kilometers <mm:ss.sss>:");
 		String runner25k = keyboard.nextLine();
 		System.out.println("\n");
 		
@@ -125,11 +134,15 @@ public class CrossCountry {
 		
 		System.out.print("Please enter your first and last name:");
 		String runner3name = keyboard.nextLine();
-		System.out.print("Please enter your time for 1 mile <mm:ss.sss>:");
+		
+		int name3 = runner3name.indexOf(' ');
+		String FirstName3 = runner3name.substring(0,name3);
+		
+		System.out.print(FirstName3 + ", please enter your time for 1 mile <mm:ss.sss>:");
 		String runner3m1 = keyboard.nextLine();
-		System.out.print("Please enter your time for 2 miles <mm:ss.sss>:");
+		System.out.print(FirstName3 + ", please enter your time for 2 miles <mm:ss.sss>:");
 		String runner3m2 = keyboard.nextLine();
-		System.out.print("Please enter your time for 5 kilometers <mm:ss.sss>:");
+		System.out.print(FirstName3 + ", please enter your time for 5 kilometers <mm:ss.sss>:");
 		String runner35k = keyboard.nextLine();
 		System.out.println("\n");
 		
@@ -172,11 +185,15 @@ public class CrossCountry {
 		
 		System.out.print("Please enter your first and last name:");
 		String runner4name = keyboard.nextLine();
-		System.out.print("Please enter your time for 1 mile <mm:ss.sss>:");
+		
+		int name4 = runner4name.indexOf(' ');
+		String FirstName4 = runner4name.substring(0,name4);
+		
+		System.out.print(FirstName4 + ", please enter your time for 1 mile <mm:ss.sss>:");
 		String runner4m1 = keyboard.nextLine();
-		System.out.print("Please enter your time for 2 miles <mm:ss.sss>:");
+		System.out.print(FirstName4 + ", please enter your time for 2 miles <mm:ss.sss>:");
 		String runner4m2 = keyboard.nextLine();
-		System.out.print("Please enter your time for 5 kilometers <mm:ss.sss>:");
+		System.out.print(FirstName4 + ", please enter your time for 5 kilometers <mm:ss.sss>:");
 		String runner45k = keyboard.nextLine();
 		System.out.println("\n");
 		
@@ -188,9 +205,9 @@ public class CrossCountry {
 		double r4m1secfinal = Double.valueOf(sec10);
 		double r4m1timetotal = r4m1secfinal + r4m1minfinal;
 		
-		int positionr4m2 = runner2m2.indexOf(':');
-		String min11 = runner2m2.substring(0,positionr4m2);
-		String sec11 = runner2m2.substring(positionr4m2+1);
+		int positionr4m2 = runner4m2.indexOf(':');
+		String min11 = runner4m2.substring(0,positionr4m2);
+		String sec11 = runner4m2.substring(positionr4m2+1);
 		double r4m2minfinal = Double.valueOf(min11) * 60;
 		double r4m2secfinal = Double.valueOf(sec11);
 		double r4m2timetotal = r4m2secfinal + r4m2minfinal;	
@@ -219,11 +236,15 @@ public class CrossCountry {
 		
 		System.out.print("Please enter your first and last name:");
 		String runner5name = keyboard.nextLine();
-		System.out.print("Please enter your time for 1 mile <mm:ss.sss>:");
+		
+		int name5 = runner5name.indexOf(' ');
+		String FirstName5 = runner5name.substring(0,name5);
+		
+		System.out.print(FirstName5 + ", please enter your time for 1 mile <mm:ss.sss>:");
 		String runner5m1 = keyboard.nextLine();
-		System.out.print("Please enter your time for 2 miles <mm:ss.sss>:");
+		System.out.print(FirstName5 + ", please enter your time for 2 miles <mm:ss.sss>:");
 		String runner5m2 = keyboard.nextLine();
-		System.out.print("Please enter your time for 5 kilometers <mm:ss.sss>:");
+		System.out.print(FirstName5 + ", please enter your time for 5 kilometers <mm:ss.sss>:");
 		String runner55k = keyboard.nextLine();
 		System.out.println("\n");
 		
@@ -263,6 +284,15 @@ public class CrossCountry {
 		System.out.println("Split Two: " + r5split2Minutes + ":" + formatter.format(r5split2Seconds));
 		System.out.println("Split Three: " + r5split3Minutes + ":" + formatter.format(r5split3Seconds));
 		System.out.println("\n");
+		
+		System.out.println("******************************************************Race Summary***********************************************");
+		System.out.printf("%25s %25s %25s %25s \n"," Runner Name"," Mile 1 Time"," Split Two"," Split 3");
+		System.out.printf("%25s %25s %25s %25s \n",runner1name,runner1m1,(r1split2Minutes + ":" + formatter.format(r1split2Seconds)),(r1split3Minutes + ":" + formatter.format(r1split3Seconds)));
+		System.out.printf("%25s %25s %25s %25s \n",runner2name,runner2m1,(r2split2Minutes + ":" + formatter.format(r2split2Seconds)),(r2split3Minutes + ":" + formatter.format(r2split3Seconds)));
+		System.out.printf("%25s %25s %25s %25s \n",runner3name,runner3m1,(r3split2Minutes + ":" + formatter.format(r3split2Seconds)),(r3split3Minutes + ":" + formatter.format(r3split3Seconds)));
+		System.out.printf("%25s %25s %25s %25s \n",runner4name,runner4m1,(r4split2Minutes + ":" + formatter.format(r4split2Seconds)),(r4split3Minutes + ":" + formatter.format(r4split3Seconds)));
+		System.out.printf("%25s %25s %25s %25s \n",runner5name,runner5m1,(r5split2Minutes + ":" + formatter.format(r5split2Seconds)),(r5split3Minutes + ":" + formatter.format(r5split3Seconds)));
+		
 		
 	}
 
