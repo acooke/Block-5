@@ -21,7 +21,7 @@ public class Example1 {
 		
 		x = keyboard.nextInt(); // Grabs the next integer
 		y = keyboard.nextInt(); // Grabs the next integer
-		z = keyboard.nextInt(); // Grabs the next integer
+		z = keyboard.nextInt(); // Grabs the next integer = Same as Before
 		
 		double average = (x + y + z) / 3.0;
 		
