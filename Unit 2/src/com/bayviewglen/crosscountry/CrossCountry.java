@@ -1,5 +1,4 @@
-/* 
- Name: Aidan Cooke
+/* Name: Aidan Cooke
  Course: ICS3U AP
  Title: Cross Country Assignment
  Description: Calculates the split times between mile one and mile two and the split times between mile 2 and 5 kilometers
@@ -20,13 +19,13 @@ public class CrossCountry {
 	public static void main(String[] args) {
 
 		Scanner keyboard = new Scanner(System.in);
-		
+		//Getting Name 1
 		System.out.print("Please enter your first and last name:");
 		String runner1name = keyboard.nextLine();
-		
+		//Finding First Name
 		int name1 = runner1name.indexOf(' ');
 		String FirstName1 = runner1name.substring(0,name1);
-		
+		//Finding Running Info
 		System.out.print(FirstName1 + ", please enter your time for 1 mile <mm:ss.sss>:");
 		String runner1m1 = keyboard.nextLine();
 		System.out.print(FirstName1 + ", please enter your time for 2 miles <mm:ss.sss>:");
@@ -34,14 +33,14 @@ public class CrossCountry {
 		System.out.print(FirstName1 + ", please enter your time for 5 kilometers <mm:ss.sss>:");
 		String runner15k = keyboard.nextLine();
 		
-		// convert splits to seconds
+		//Finding m1 time
 		int positionr1s1 = runner1m1.indexOf(':');
 		String min1 = runner1m1.substring(0,positionr1s1);
 		String sec1 = runner1m1.substring(positionr1s1+1);
 		double r1m1minfinal = Double.valueOf(min1) * 60;
 		double r1m1secfinal = Double.valueOf(sec1);
 		double r1m1timetotal = r1m1secfinal + r1m1minfinal;
-		
+		//finding m2 time
 		int positionr1m2 = runner1m2.indexOf(':');
 		String min2 = runner1m2.substring(0,positionr1m2);
 		String sec2 = runner1m2.substring(positionr1m2+1);
@@ -52,7 +51,7 @@ public class CrossCountry {
 		double r1split2InSeconds = r1m2timetotal - r1m1timetotal;
 		int r1split2Minutes = (int)r1split2InSeconds/60;
 		double r1split2Seconds = r1split2InSeconds - r1split2Minutes * 60;
-		
+		//finding 5k time
 		int positionr15k = runner15k.indexOf(':');
 		String min3 = runner15k.substring(0,positionr15k);
 		String sec3 = runner15k.substring(positionr15k+1);
@@ -67,7 +66,7 @@ public class CrossCountry {
 		DecimalFormat formatter = new DecimalFormat("00.000");
 		
 		System.out.println("\n");
-		
+		//Runner 1 Summary
 		System.out.println("********RUNNER ONE SUMMARY********");
 		System.out.println("Name:" + runner1name);
 		System.out.println("Mile 1 Time: " + runner1m1);
@@ -255,7 +254,7 @@ public class CrossCountry {
 		double r5m1minfinal = Double.valueOf(min13) * 60;
 		double r5m1secfinal = Double.valueOf(sec13);
 		double r5m1timetotal = r5m1secfinal + r5m1minfinal;
-		
+		//Finding Split 2
 		int positionr5m2 = runner5m2.indexOf(':');
 		String min14 = runner5m2.substring(0,positionr5m2);
 		String sec14 = runner5m2.substring(positionr5m2+1);
@@ -266,7 +265,7 @@ public class CrossCountry {
 		double r5split2InSeconds = r5m2timetotal - r5m1timetotal;
 		int r5split2Minutes = (int)r5split2InSeconds/60;
 		double r5split2Seconds = r5split2InSeconds - r5split2Minutes * 60;
-		
+		//Finding Split 3
 		int positionr55k = runner55k.indexOf(':');
 		String min15 = runner55k.substring(0,positionr55k);
 		String sec15 = runner55k.substring(positionr55k+1);
@@ -277,14 +276,14 @@ public class CrossCountry {
 		double r5split3InSeconds = r55ktimetotal - r5m2timetotal;
 		int r5split3Minutes = (int)r5split3InSeconds/60;
 		double r5split3Seconds = r5split3InSeconds - r5split3Minutes * 60;
-		
+		//Summarizing Runner 5
 		System.out.println("********RUNNER FIVE SUMMARY********");
 		System.out.println("Name:" + runner5name);
 		System.out.println("Mile 1 Time: " + runner5m1);
 		System.out.println("Split Two: " + r5split2Minutes + ":" + formatter.format(r5split2Seconds));
 		System.out.println("Split Three: " + r5split3Minutes + ":" + formatter.format(r5split3Seconds));
 		System.out.println("\n");
-		
+		// Displaying in a Table
 		System.out.println("******************************************************Race Summary***********************************************");
 		System.out.printf("%25s %25s %25s %25s \n"," Runner Name"," Mile 1 Time"," Split Two"," Split 3");
 		System.out.printf("%25s %25s %25s %25s \n",runner1name,runner1m1,(r1split2Minutes + ":" + formatter.format(r1split2Seconds)),(r1split3Minutes + ":" + formatter.format(r1split3Seconds)));
@@ -293,7 +292,7 @@ public class CrossCountry {
 		System.out.printf("%25s %25s %25s %25s \n",runner4name,runner4m1,(r4split2Minutes + ":" + formatter.format(r4split2Seconds)),(r4split3Minutes + ":" + formatter.format(r4split3Seconds)));
 		System.out.printf("%25s %25s %25s %25s \n",runner5name,runner5m1,(r5split2Minutes + ":" + formatter.format(r5split2Seconds)),(r5split3Minutes + ":" + formatter.format(r5split3Seconds)));
 		
-		
+		keyboard.close();
 	}
 
 }
